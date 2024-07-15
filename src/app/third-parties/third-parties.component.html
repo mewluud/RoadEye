@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>3rd Parties</h2>
+  <form [formGroup]="thirdPartiesForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="involved">Who is involved?</label>
+      <select id="involved" formControlName="involved" class="form-control">
+        <option value="">Select...</option>
+        <option value="justMe">Just me</option>
+        <option value="anotherVehicle">Another vehicle</option>
+      </select>
+    </div>
+
+    <!-- Form for "Another vehicle" -->
+    <div *ngIf="thirdPartiesForm.get('involved')?.value === 'anotherVehicle'">
+      <div class="form-group">
+        <label for="driverName">Driver's Name</label>
+        <input type="text" id="driverName" formControlName="driverName" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="driverNumber">Driver's Number</label>
+        <input type="text" id="driverNumber" formControlName="driverNumber" class="form-control">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!thirdPartiesForm.valid">Submit</button>
+  </form>
+</div>

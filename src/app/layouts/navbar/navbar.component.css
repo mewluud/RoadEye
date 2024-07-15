@@ -1,0 +1,40 @@
+.bg-custom {
+  background-color: #2D4059; /* Dark Blue */
+}
+
+.navbar-brand {
+  color: #FFD460; /* Yellow */
+  font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+  color: #FFD460; /* Yellow */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #EA5455; /* Red */
+}
+
+.text-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.btn-outline-primary {
+  border-color: #EA5455; /* Border color for outline button */
+  color: #EA5455; /* Text color for outline button */
+}
+
+.btn-outline-primary:hover {
+  background-color: #EA5455; /* Hover background color */
+  color: #FFFFFF; /* Hover text color */
+}
+
+/* Rectangle shape for sign-up button */
+.btn-rectangle {
+  border-radius: 0; /* Remove rounded corners */
+}
+
+/* Spacing between links */
+.nav-link {
+  margin-right: 15px; /* Adjust margin between nav links */
+}

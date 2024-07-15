@@ -1,0 +1,41 @@
+/* me.component.css */
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #2D4059;
+  color: #FFFFFF;
+  border: none;
+}
+@media (max-width: 768px) {
+  .container {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+}
+h3 {
+  color: #2D4059;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.btn-primary:hover {
+  background-color: #F07B3F;
+}
+
+.btn-outline-primary {
+  color: #2D4059;
+  border-color: #2D4059;
+}
+
+.btn-outline-primary:hover {
+  color: #FFFFFF;
+  background-color: #2D4059;
+  border-color: #2D4059;
+}

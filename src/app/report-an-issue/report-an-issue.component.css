@@ -1,0 +1,41 @@
+/* report-an-issue.component.scss */
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #EEEEEE;
+  border: 1px solid #CCCCCC;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .container {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+}
+h2 {
+  color: #2D4059;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #393E46;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.btn-report {
+  background-color: #EA5455;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-report:hover {
+  background-color: #F07B3F;
+}

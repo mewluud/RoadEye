@@ -1,11 +1,50 @@
 <div class="container">
-  <h2>Road Issues</h2>
+  <!--<h2>Road Issues</h2>
   <button type="button" class="btn btn-secondary" (click)="selectSubCategory('accident')">Alert for Accident</button>
   <button type="button" class="btn btn-secondary" (click)="selectSubCategory('pathHole')">Alert for Path Hole</button>
   <button type="button" class="btn btn-secondary" (click)="selectSubCategory('animals')">Animals on the Road</button>
+-->
+  <h2>Road Issues</h2>
+  <form [formGroup]="roadIssueForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="involved">Choose The Alert </label>
+      <select id="involved" formControlName="involved" class="form-control">
+        <option value="">Select...</option>
+        <option value="Accident Alert">Accident Alert</option>
+        <option value="Animals on the Road">Animals on the Road</option>
+        <option value="Path Hole Alert">Path Hole Alert</option>
+      </select>
+    </div>
 
+    <div *ngIf="roadIssueForm.get('involved')?.value === 'Accident Alert' ">
+      <h4>Accident Alert </h4>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" class="form-control"></textarea>
+      </div>
+    </div>
+
+    <div *ngIf="roadIssueForm.get('involved')?.value === 'Animals on the Road'">
+      <h4>Animals on the Road </h4>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" class="form-control"></textarea>
+      </div>
+    </div>
+
+    <div *ngIf="roadIssueForm.get('involved')?.value === 'Path Hole Alert'">
+      <h4>Animals on the Road </h4>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" class="form-control"></textarea>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!roadIssueForm.valid">Submit</button>
+  </form>
+
+</div>
   <!-- Subcategory forms -->
-  <div *ngIf="selectedSubCategory === 'accident'">
+  <!--<div *ngIf="selectedSubCategory === 'accident'">
     <h4>Accident Alert Form</h4>
     <form [formGroup]="accidentForm" (ngSubmit)="onSubmitSubCategory(accidentForm)">
       <div class="form-group">
@@ -36,5 +75,6 @@
       </div>
       <button type="submit" class="btn btn-success" [disabled]="!animalsForm.valid">Submit</button>
     </form>
-  </div>
-</div>
+  </div>-->
+
+

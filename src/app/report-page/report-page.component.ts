@@ -105,11 +105,7 @@ export class ReportPageComponent implements AfterViewInit {
     const completeReport = {
       location: location ? `${location.lat}, ${location.lng}` : '',
       timestamp: currentTime,
-/*      accidentForm: this.accidentForm.value,
-      pathHoleForm: this.pathHoleForm.value,
-      animalsForm: this.animalsForm.value,
-      thirdPartiesForm: this.thirdPartiesForm.value,
-      meForm:this.meForm.value,*/
+
     };
 
     this.reportService.submitReport(completeReport.location, completeReport.timestamp, completeReport).subscribe(

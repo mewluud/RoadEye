@@ -13,6 +13,9 @@ import { MeComponent } from './me/me.component';
 import { ThirdPartiesComponent } from './third-parties/third-parties.component';
 import { PicturesComponent } from './pictures/pictures.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import { MapComponent } from './map/map.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -25,13 +28,16 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     RoadIssuesComponent,
     MeComponent,
     ThirdPartiesComponent,
-    PicturesComponent
+    PicturesComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    LeafletModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,7 +10,7 @@ import { ReportService } from '../report.service';
 })
 export class ThirdPartiesComponent implements OnInit {
   thirdPartiesForm: FormGroup;
-  ngOnInit(): void {}
+
   constructor(private fb: FormBuilder, private router: Router, private reportService: ReportService) {
     this.thirdPartiesForm = this.fb.group({
       involved: ['', Validators.required],
@@ -20,12 +20,27 @@ export class ThirdPartiesComponent implements OnInit {
     });
   }
 
+  ngOnInit(): void {
+    this.thirdPartiesForm.get('involved')?.valueChanges.subscribe(value => {
+      if (value === 'anotherVehicle') {
+        this.thirdPartiesForm.get('driverName')?.setValidators([Validators.required]);
+        this.thirdPartiesForm.get('driverNumber')?.setValidators([Validators.required]);
+      } else {
+        this.thirdPartiesForm.get('driverName')?.clearValidators();
+        this.thirdPartiesForm.get('driverNumber')?.clearValidators();
+      }
+      this.thirdPartiesForm.get('driverName')?.updateValueAndValidity();
+      this.thirdPartiesForm.get('driverNumber')?.updateValueAndValidity();
+    });
+  }
+
   onSubmit() {
     if (this.thirdPartiesForm.valid) {
       this.reportService.saveThirdParties(this.thirdPartiesForm.value);
       this.router.navigate(['/Report']);
     }
   }
+
   get involvedFormControl() {
     return this.thirdPartiesForm.get('involved');
   }

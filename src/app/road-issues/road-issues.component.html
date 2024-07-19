@@ -1,9 +1,5 @@
 <div class="container">
-  <!--<h2>Road Issues</h2>
-  <button type="button" class="btn btn-secondary" (click)="selectSubCategory('accident')">Alert for Accident</button>
-  <button type="button" class="btn btn-secondary" (click)="selectSubCategory('pathHole')">Alert for Path Hole</button>
-  <button type="button" class="btn btn-secondary" (click)="selectSubCategory('animals')">Animals on the Road</button>
--->
+
   <h2>Road Issues</h2>
   <form [formGroup]="roadIssueForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -43,38 +39,7 @@
   </form>
 
 </div>
-  <!-- Subcategory forms -->
-  <!--<div *ngIf="selectedSubCategory === 'accident'">
-    <h4>Accident Alert Form</h4>
-    <form [formGroup]="accidentForm" (ngSubmit)="onSubmitSubCategory(accidentForm)">
-      <div class="form-group">
-        <label for="description">Description</label>
-        <textarea id="description" formControlName="description" class="form-control"></textarea>
-      </div>
-      <button type="submit" class="btn btn-success" [disabled]="!accidentForm.valid">Submit</button>
-    </form>
-  </div>
 
-  <div *ngIf="selectedSubCategory === 'pathHole'">
-    <h4>Path Hole Alert Form</h4>
-    <form [formGroup]="pathHoleForm" (ngSubmit)="onSubmitSubCategory(pathHoleForm)">
-      <div class="form-group">
-        <label for="description">Description</label>
-        <textarea id="description" formControlName="description" class="form-control"></textarea>
-      </div>
-      <button type="submit" class="btn btn-success" [disabled]="!pathHoleForm.valid">Submit</button>
-    </form>
-  </div>
 
-  <div *ngIf="selectedSubCategory === 'animals'">
-    <h4>Animals on the Road Form</h4>
-    <form [formGroup]="animalsForm" (ngSubmit)="onSubmitSubCategory(animalsForm)">
-      <div class="form-group">
-        <label for="description">Description</label>
-        <textarea id="description" formControlName="description" class="form-control"></textarea>
-      </div>
-      <button type="submit" class="btn btn-success" [disabled]="!animalsForm.valid">Submit</button>
-    </form>
-  </div>-->
 
 

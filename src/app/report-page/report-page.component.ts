@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ReportService } from '../report.service';
+import { MapComponent } from '../map/map.component';
 
 @Component({
   selector: 'app-report-page',
   templateUrl: './report-page.component.html',
   styleUrls: ['./report-page.component.css']
 })
-export class ReportPageComponent {
+export class ReportPageComponent implements AfterViewInit {
+  @ViewChild(MapComponent) mapComponent!: MapComponent;
   selectedCategory: string | null = null;
   selectedSubCategory: string | null = null;
 
@@ -14,8 +17,14 @@ export class ReportPageComponent {
   pathHoleForm: FormGroup;
   animalsForm: FormGroup;
   thirdPartiesForm: FormGroup;
+  meForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  ngAfterViewInit(): void {
+    // Initialize the map once the view has been initialized
+    this.mapComponent.initializeMap();
+  }
+
+  constructor(private fb: FormBuilder, private reportService: ReportService) {
     this.accidentForm = this.fb.group({
       location: ['', Validators.required],
       description: ['', Validators.required]
@@ -34,8 +43,15 @@ export class ReportPageComponent {
       driverNumber: [''],
       description: ['']
     });
+    this.meForm = this.fb.group({
+      registrationNumber: ['', Validators.required],
+      description: ['', Validators.required],
+      isInjured: ['', Validators.required],
+      hasPassenger: ['', Validators.required],
+      passengerCount: ['', Validators.required],
+      isPassengerInjured: ['', Validators.required]
+    })
   }
-
 
   selectCategory(category: string) {
     this.selectedCategory = category;
@@ -52,6 +68,7 @@ export class ReportPageComponent {
       // Handle form submission, e.g., send data to the backend
     }
   }
+
   onInvolvedChange() {
     const involved = this.thirdPartiesForm.get('involved')?.value;
     if (involved === 'anotherVehicle') {
@@ -79,5 +96,31 @@ export class ReportPageComponent {
       default:
         return false;
     }
+  }
+
+  onSubmitReport() {
+    const location = this.mapComponent.getLocation();
+    const currentTime = new Date().toISOString();
+
+    const completeReport = {
+      location: location ? `${location.lat}, ${location.lng}` : '',
+      timestamp: currentTime,
+/*      accidentForm: this.accidentForm.value,
+      pathHoleForm: this.pathHoleForm.value,
+      animalsForm: this.animalsForm.value,
+      thirdPartiesForm: this.thirdPartiesForm.value,
+      meForm:this.meForm.value,*/
+    };
+
+    this.reportService.submitReport(completeReport.location, completeReport.timestamp, completeReport).subscribe(
+        response => {
+          console.log('Report submitted successfully:', response);
+          // Handle successful submission
+        },
+        error => {
+          console.error('Error submitting report:', error);
+          // Handle error
+        }
+    );
   }
 }

@@ -39,3 +39,23 @@ p {
 .btn-report:hover {
   background-color: #F07B3F;
 }
+.submitted-report {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.submitted-report h3 {
+  margin-bottom: 20px;
+}
+
+.submitted-report h4 {
+  margin-top: 15px;
+}
+
+.submitted-report pre {
+  background-color: #e9ecef;
+  padding: 10px;
+  border-radius: 5px;
+}

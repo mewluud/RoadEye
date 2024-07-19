@@ -6,6 +6,7 @@ import {RoadIssuesComponent} from "./road-issues/road-issues.component";
 import {MeComponent} from "./me/me.component";
 import {ThirdPartiesComponent} from "./third-parties/third-parties.component";
 import {PicturesComponent} from "./pictures/pictures.component";
+import {MapComponent} from "./map/map.component";
 
 const routes: Routes = [
   { path: 'report', component: ReportAnIssueComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'Me', component: MeComponent },
   { path: '3rd-Prt', component: ThirdPartiesComponent },
   { path: 'Pictures', component: PicturesComponent },
+  { path: 'map', component: MapComponent },
   { path: '', redirectTo: '/Report', pathMatch: 'full' }
 ];
 

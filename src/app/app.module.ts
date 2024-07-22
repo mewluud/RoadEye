@@ -17,6 +17,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { MapComponent } from './map/map.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+import { FileUrlPipe } from './file-url.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
     PicturesComponent,
     MapComponent,
     HowItWorksComponent,
+    FileUrlPipe,
   ],
   imports: [
     BrowserModule,

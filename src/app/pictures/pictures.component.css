@@ -1,0 +1,57 @@
+/* picture.component.css */
+.container {
+  padding: 20px;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin: 10px 0;
+}
+
+.btn-upload, .btn-remove {
+  background-color: #2D4059;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-upload:hover, .btn-remove:hover {
+  background-color: #EA5455;
+}
+
+.preview-area {
+  margin-top: 20px;
+}
+
+.preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.preview {
+  position: relative;
+  display: inline-block;
+}
+
+.preview img {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-remove {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}

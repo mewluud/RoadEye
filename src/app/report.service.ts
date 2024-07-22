@@ -1,8 +1,7 @@
-
-
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {HttpClient, HttpEventType,} from '@angular/common/http';
+import { Observable} from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -12,7 +11,7 @@ export class ReportService {
   private meFormData: any = {};
   private roadIssueData: any = {};
   private thirdPartiesData: any = {};
-  private picturesData: any = {};
+  private picturesData: File[] = [];
   private submittedReport: any = {};
 
   constructor(private http: HttpClient) { }
@@ -73,5 +72,26 @@ export class ReportService {
   }
   getReports(): Observable<any[]> {
     return this.http.get<any[]>('http://localhost:8080/api/reports/l');
+  }
+  // Add this method to handle file uploads
+  uploadPicture(file: File): Observable<number> {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    return this.http.post('http://localhost:8080/api/reports/upload', formData, {
+      reportProgress: true,
+      observe: 'events'
+    }).pipe(
+      map(event => {
+        switch (event.type) {
+          case HttpEventType.UploadProgress:
+            return Math.round(100 * event.loaded / (event.total || 1));
+          case HttpEventType.Response:
+            return 100; // Upload complete
+          default:
+            return 0;
+        }
+      })
+    );
   }
 }

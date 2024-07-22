@@ -38,3 +38,7 @@
 .nav-link {
   margin-right: 15px; /* Adjust margin between nav links */
 }
+.navbar-brand img.navbar-logo {
+  height: 150px; /* Adjust the height as needed */
+  width: 150px; /* Maintain aspect ratio */
+}

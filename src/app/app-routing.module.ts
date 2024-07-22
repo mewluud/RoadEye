@@ -7,6 +7,7 @@ import {MeComponent} from "./me/me.component";
 import {ThirdPartiesComponent} from "./third-parties/third-parties.component";
 import {PicturesComponent} from "./pictures/pictures.component";
 import {MapComponent} from "./map/map.component";
+import {HomeComponent} from "./home/home.component";
 
 const routes: Routes = [
   { path: 'report', component: ReportAnIssueComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: '3rd-Prt', component: ThirdPartiesComponent },
   { path: 'Pictures', component: PicturesComponent },
   { path: 'map', component: MapComponent },
-  { path: '', redirectTo: '/Report', pathMatch: 'full' }
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({

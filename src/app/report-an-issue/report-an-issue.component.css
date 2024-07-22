@@ -59,3 +59,42 @@ p {
   padding: 10px;
   border-radius: 5px;
 }
+/* report-an-issue.component.css */
+.container {
+  padding: 20px;
+}
+
+.btn-report {
+  background-color: #EA5455;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-report:hover {
+  background-color: #F07B3F;
+}
+
+.report-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.report-card h3 {
+  color: #2D4059;
+}
+
+.report-card p {
+  color: #393E46;
+  margin: 5px 0;
+}
+
+.report-card p strong {
+  color: #2D4059;
+}

@@ -71,4 +71,7 @@ export class ReportService {
   getSubmittedReport() {
     return this.submittedReport;
   }
+  getReports(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:8080/api/reports/l');
+  }
 }

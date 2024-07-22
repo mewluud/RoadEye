@@ -7,15 +7,18 @@ import { ReportService } from 'src/app/report.service';
   styleUrls: ['./report-an-issue.component.css']
 })
 export class ReportAnIssueComponent implements OnInit {
-  submittedReport: any;
+  reports: any[] = [];
 
   constructor(private reportService: ReportService) { }
 
   ngOnInit(): void {
-    this.loadSubmittedReport();
+    this.fetchReports();
+  }
+  fetchReports(): void {
+    this.reportService.getReports().subscribe((data: any[]) => {
+      this.reports = data;
+    });
   }
 
-  loadSubmittedReport() {
-    this.submittedReport = this.reportService.getSubmittedReport();
-  }
 }
+

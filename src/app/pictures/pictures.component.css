@@ -1,33 +1,65 @@
-/* picture.component.css */
+/* pictures.component.css */
 .container {
-  padding: 20px;
-}
-
-.upload-form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.form-group {
-  margin: 10px 0;
+h2 {
+  color: #2D4059;
+  margin-bottom: 20px;
+}
+
+.upload-form, .form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  background-color: #2D4059;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-upload:hover {
+  background-color: #EA5455;
+}
+
+input[type="file"] {
+  display: none;
 }
 
 .btn-upload, .btn-remove {
-  background-color: #2D4059;
+  background-color: #EA5455;
   color: #fff;
   border: none;
   padding: 10px 20px;
   margin: 5px;
   cursor: pointer;
+  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .btn-upload:hover, .btn-remove:hover {
-  background-color: #EA5455;
+  background-color: #F07B3F;
 }
 
 .preview-area {
+  width: 100%;
   margin-top: 20px;
 }
 
@@ -54,4 +86,9 @@
   position: absolute;
   top: 5px;
   right: 5px;
+}
+
+p {
+  color: #2D4059;
+  font-size: 16px;
 }

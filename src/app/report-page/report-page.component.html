@@ -1,17 +1,24 @@
-<div class="container">
-  <h2>Report Issues</h2>
-  <div class="buttons">
-    <button routerLink="/road-issue" class="btn btn-primary">Road Issues</button>
-    <button routerLink="/Me" class="btn btn-primary">ME</button>
-    <button routerLink="/3rd-Prt" class="btn btn-primary">3rd Parties</button>
-    <button routerLink="/Pictures" class="btn btn-primary">Pictures</button>
-  </div>
-  <div class="map-container">
-    <div class="map-wrapper">
-      <app-map></app-map>
+<!-- report.component.html -->
+<div class="outer-container">
+  <div class="report-container">
+    <h2>Report Issues</h2>
+    <div class="buttons">
+      <button routerLink="/road-issue" class="btn btn-primary">Road Issues</button>
+      <button routerLink="/Me" class="btn btn-primary">ME</button>
+      <button routerLink="/3rd-Prt" class="btn btn-primary">3rd Parties</button>
+      <button routerLink="/Pictures" class="btn btn-primary">Pictures</button>
     </div>
-  </div>
-  <div class="container">
-    <button routerLink="/report" class="btn btn-success" (click)="onSubmitReport()">Submit Complete Report</button>
+    <div class="map-container">
+      <div class="map-wrapper">
+        <app-map (locationChanged)="onLocationChanged($event)"></app-map>
+      </div>
+    </div>
+    <!--<div class="location-input">
+      <label for="location">Location Coordinates:</label>
+      <input id="location" type="text" [(ngModel)]="location" readonly>
+    </div>-->
+    <div class="submit-container">
+      <button routerLink="/report" class="btn btn-success" (click)="onSubmitReport()">Submit Complete Report</button>
+    </div>
   </div>
 </div>

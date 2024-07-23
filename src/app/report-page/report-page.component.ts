@@ -12,12 +12,16 @@ export class ReportPageComponent implements AfterViewInit {
   @ViewChild(MapComponent) mapComponent!: MapComponent;
   selectedCategory: string | null = null;
   selectedSubCategory: string | null = null;
-
+  location: string = '';
   accidentForm: FormGroup;
   pathHoleForm: FormGroup;
   animalsForm: FormGroup;
   thirdPartiesForm: FormGroup;
   meForm: FormGroup;
+
+  onLocationChanged(coords: { lat: number; lng: number }): void {
+    this.location = `Lat: ${coords.lat}, Lng: ${coords.lng}`;
+  }
 
   ngAfterViewInit(): void {
     // Initialize the map once the view has been initialized

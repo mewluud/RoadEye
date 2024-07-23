@@ -1,4 +1,5 @@
-import { Component, OnInit,OnDestroy } from '@angular/core';
+// map.component.ts
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import * as L from 'leaflet';
 
 @Component({
@@ -10,16 +11,20 @@ export class MapComponent implements OnInit, OnDestroy {
   map!: L.Map;
   marker?: L.Marker;
 
+  @Output() locationChanged = new EventEmitter<{ lat: number; lng: number }>();
+
   constructor() { }
 
   ngOnInit(): void {
     this.initializeMap();
   }
+
   ngOnDestroy(): void {
     if (this.map) {
       this.map.remove();
     }
   }
+
   initializeMap(): void {
     this.map = L.map('map').setView([51.505, -0.09], 13);
 
@@ -36,10 +41,13 @@ export class MapComponent implements OnInit, OnDestroy {
       this.marker = L.marker(e.latlng, { draggable: true }).addTo(this.map)
         .bindPopup('You are here').openPopup();
 
+      this.locationChanged.emit(e.latlng);
+
       this.marker.on('dragend', () => {
         const position = this.marker?.getLatLng();
         if (position) {
-          this.marker?.setLatLng(position).bindPopup(position.toString()).openPopup();
+          this.marker?.setLatLng(position).bindPopup(`Lat: ${position.lat}, Lng: ${position.lng}`).openPopup();
+          this.locationChanged.emit(position);
         }
       });
     });

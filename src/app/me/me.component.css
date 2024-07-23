@@ -1,6 +1,6 @@
 /* me.component.css */
 
-.container {
+/*.container {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -17,7 +17,7 @@
 }
 @media (max-width: 768px) {
   .container {
-    width: 90%; /* Adjust width for smaller screens */
+    width: 90%; !* Adjust width for smaller screens *!
   }
 }
 h3 {
@@ -38,4 +38,73 @@ h3 {
   color: #FFFFFF;
   background-color: #2D4059;
   border-color: #2D4059;
+}*/
+/* me.component.css */
+.me-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h3 {
+  color: #2D4059;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+label {
+  color: #2D4059;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+textarea.form-control {
+  height: 100px;
+}
+
+.btn-success {
+  background-color: #EA5455;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.btn-success[disabled] {
+  background-color:#F07B3F;
+  cursor: not-allowed;
+}
+
+.btn-success:hover {
+  background-color: #FFD460;
 }

@@ -1,9 +1,9 @@
-<div class="container">
-
+<!-- road-issue.component.html -->
+<div class="container road-issue-container">
   <h2>Road Issues</h2>
   <form [formGroup]="roadIssueForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="involved">Choose The Alert </label>
+      <label for="involved">Choose The Alert</label>
       <select id="involved" formControlName="involved" class="form-control">
         <option value="">Select...</option>
         <option value="Accident Alert">Accident Alert</option>
@@ -12,8 +12,8 @@
       </select>
     </div>
 
-    <div *ngIf="roadIssueForm.get('involved')?.value === 'Accident Alert' ">
-      <h4>Accident Alert </h4>
+    <div *ngIf="roadIssueForm.get('involved')?.value === 'Accident Alert'">
+      <h4>Accident Alert</h4>
       <div class="form-group">
         <label for="description">Description</label>
         <textarea id="description" formControlName="description" class="form-control"></textarea>
@@ -21,7 +21,7 @@
     </div>
 
     <div *ngIf="roadIssueForm.get('involved')?.value === 'Animals on the Road'">
-      <h4>Animals on the Road </h4>
+      <h4>Animals on the Road</h4>
       <div class="form-group">
         <label for="description">Description</label>
         <textarea id="description" formControlName="description" class="form-control"></textarea>
@@ -29,7 +29,7 @@
     </div>
 
     <div *ngIf="roadIssueForm.get('involved')?.value === 'Path Hole Alert'">
-      <h4>Animals on the Road </h4>
+      <h4>Path Hole Alert</h4>
       <div class="form-group">
         <label for="description">Description</label>
         <textarea id="description" formControlName="description" class="form-control"></textarea>
@@ -37,9 +37,7 @@
     </div>
     <button type="submit" class="btn btn-success" [disabled]="!roadIssueForm.valid">Submit</button>
   </form>
-
 </div>
-
 
 
 

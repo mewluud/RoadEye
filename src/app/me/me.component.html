@@ -1,8 +1,9 @@
-<div class="container">
+
+<div class="container me-container">
   <h3>ME</h3>
   <form [formGroup]="meForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="registrationNumber">Registration Number</label>
+      <label for="registrationNumber">Number</label>
       <input type="text" id="registrationNumber" formControlName="registrationNumber" class="form-control">
     </div>
     <div class="form-group">
@@ -11,7 +12,7 @@
     </div>
     <div class="form-group">
       <label>Are you injured?</label>
-      <div>
+      <div class="radio-group">
         <label>
           <input type="radio" formControlName="isInjured" value="yes"> Yes
         </label>
@@ -22,7 +23,7 @@
     </div>
     <div class="form-group">
       <label>Any passengers in the vehicle?</label>
-      <div>
+      <div class="radio-group">
         <label>
           <input type="radio" formControlName="hasPassenger" value="yes"> Yes
         </label>
@@ -37,7 +38,7 @@
     </div>
     <div class="form-group" *ngIf="meForm.get('hasPassenger')?.value === 'yes'">
       <label>Are passengers injured?</label>
-      <div>
+      <div class="radio-group">
         <label>
           <input type="radio" formControlName="isPassengerInjured" value="yes"> Yes
         </label>

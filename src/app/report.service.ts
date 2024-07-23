@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpEventType,} from '@angular/common/http';
-import { Observable} from 'rxjs';
+import { HttpClient, HttpEventType } from '@angular/common/http';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +12,19 @@ export class ReportService {
   private thirdPartiesData: any = {};
   private picturesData: File[] = [];
   private submittedReport: any = {};
+  private sectionStatus = new BehaviorSubject<{ [key: string]: boolean }>({
+    roadIssues: false,
+    me: false,
+    thirdParties: false,
+    pictures: false,
+  });
 
   constructor(private http: HttpClient) { }
 
   saveMeForm(data: any) {
     this.meFormData = data;
     console.log('Saving ME form:', data);
+    this.updateSectionStatus('me', true);
   }
 
   getMeForm() {
@@ -28,6 +34,7 @@ export class ReportService {
   saveRoadIssue(data: any) {
     this.roadIssueData = data;
     console.log('Saving road issue:', data);
+    this.updateSectionStatus('roadIssues', true);
   }
 
   getRoadIssue() {
@@ -37,6 +44,7 @@ export class ReportService {
   saveThirdParties(data: any) {
     this.thirdPartiesData = data;
     console.log('Saving third parties:', data);
+    this.updateSectionStatus('thirdParties', true);
   }
 
   getThirdParties() {
@@ -46,6 +54,7 @@ export class ReportService {
   savePictures(data: any) {
     this.picturesData = data;
     console.log('Saving pictures:', data);
+    this.updateSectionStatus('pictures', true);
   }
 
   getPictures() {
@@ -70,15 +79,17 @@ export class ReportService {
   getSubmittedReport() {
     return this.submittedReport;
   }
+
   getReports(): Observable<any[]> {
     return this.http.get<any[]>('http://localhost:8080/api/reports/l');
   }
+
   // Add this method to handle file uploads
   uploadPicture(file: File): Observable<number> {
     const formData = new FormData();
     formData.append('file', file);
 
-    return this.http.post('http://localhost:8080/api/reports/upload', formData, {
+    return this.http.post('http://localhost:8080/api/reports/create', formData, {
       reportProgress: true,
       observe: 'events'
     }).pipe(
@@ -93,5 +104,15 @@ export class ReportService {
         }
       })
     );
+  }
+
+  updateSectionStatus(section: string, status: boolean) {
+    const currentStatus = this.sectionStatus.value;
+    currentStatus[section] = status;
+    this.sectionStatus.next(currentStatus);
+  }
+
+  getSectionStatus(): Observable<{ [key: string]: boolean }> {
+    return this.sectionStatus.asObservable();
   }
 }

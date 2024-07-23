@@ -1,24 +1,79 @@
-<!-- report.component.html -->
+<!-- report-page.component.html
 <div class="outer-container">
   <div class="report-container">
     <h2>Report Issues</h2>
     <div class="buttons">
-      <button routerLink="/road-issue" class="btn btn-primary">Road Issues</button>
-      <button routerLink="/Me" class="btn btn-primary">ME</button>
-      <button routerLink="/3rd-Prt" class="btn btn-primary">3rd Parties</button>
-      <button routerLink="/Pictures" class="btn btn-primary">Pictures</button>
+      <button routerLink="/road-issue" class="btn" [ngClass]="{'btn-primary': !(sectionStatus$ | async)?.['roadIssues'], 'btn-completed': (sectionStatus$ | async)?.['roadIssues']}">
+        Road Issues
+      </button>
+      <button routerLink="/Me" class="btn" [ngClass]="{'btn-primary': !(sectionStatus$ | async)?.['me'], 'btn-completed': (sectionStatus$ | async)?.['me']}">
+        ME
+      </button>
+      <button routerLink="/3rd-Prt" class="btn" [ngClass]="{'btn-primary': !(sectionStatus$ | async)?.['thirdParties'], 'btn-completed': (sectionStatus$ | async)?.['thirdParties']}">
+        3rd Parties
+      </button>
+      <button routerLink="/Pictures" class="btn" [ngClass]="{'btn-primary': !(sectionStatus$ | async)?.['pictures'], 'btn-completed': (sectionStatus$ | async)?.['pictures']}">
+        Pictures
+      </button>
     </div>
     <div class="map-container">
       <div class="map-wrapper">
         <app-map (locationChanged)="onLocationChanged($event)"></app-map>
       </div>
     </div>
-    <!--<div class="location-input">
-      <label for="location">Location Coordinates:</label>
-      <input id="location" type="text" [(ngModel)]="location" readonly>
-    </div>-->
     <div class="submit-container">
       <button routerLink="/report" class="btn btn-success" (click)="onSubmitReport()">Submit Complete Report</button>
+    </div>
+  </div>
+</div>-->
+<!-- report-page.component.html -->
+<!-- report-page.component.html -->
+<!-- report-page.component.html -->
+<!-- report-page.component.html -->
+<!-- report-page.component.html -->
+<div class="outer-container">
+  <div class="report-container">
+    <h2>Report Issues</h2>
+    <div class="buttons">
+      <button routerLink="/road-issue" class="btn" [ngClass]="{'btn-primary': !(sectionStatus$ | async)?.['roadIssues'], 'btn-completed': (sectionStatus$ | async)?.['roadIssues']}">
+        Road Issues
+      </button>
+      <button routerLink="/Me" class="btn" [ngClass]="{'btn-primary': !(sectionStatus$ | async)?.['me'], 'btn-completed': (sectionStatus$ | async)?.['me']}">
+        ME
+      </button>
+      <button routerLink="/3rd-Prt" class="btn" [ngClass]="{'btn-primary': !(sectionStatus$ | async)?.['thirdParties'], 'btn-completed': (sectionStatus$ | async)?.['thirdParties']}">
+        3rd Parties
+      </button>
+      <button routerLink="/Pictures" class="btn" [ngClass]="{'btn-primary': !(sectionStatus$ | async)?.['pictures'], 'btn-completed': (sectionStatus$ | async)?.['pictures']}">
+        Pictures
+      </button>
+    </div>
+    <div class="map-container">
+      <div class="map-wrapper">
+        <app-map (locationChanged)="onLocationChanged($event)"></app-map>
+      </div>
+    </div>
+    <div class="submit-container">
+      <button type="button" class="btn btn-success" (click)="openConfirmationModal()">Submit Complete Report</button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<div class="modal fade" id="confirmationModal" #confirmationModal tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-header justify-content-center">
+        <img src="assets/img/logo2.png" alt="Logo" style="height: 100px;">
+      </div>
+      <div class="modal-body">
+        <h5>Confirm Submission</h5>
+        <p>Are you sure you want to submit the complete report?</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button routerLink="/report" type="button" class="btn btn-success" (click)="confirmSubmit()">Submit</button>
+      </div>
     </div>
   </div>
 </div>

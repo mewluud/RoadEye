@@ -1,4 +1,4 @@
-/* report.component.css */
+/* report-page.component.css */
 .outer-container {
   display: flex;
   justify-content: center;
@@ -90,7 +90,7 @@ h2 {
 }
 
 .btn-success {
-  background-color:  #EA5455;
+  background-color: #EA5455;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -103,4 +103,79 @@ h2 {
 
 .btn-success:hover {
   background-color: #F07B3F;
+}
+
+.btn-completed {
+  background-color: #EA5455;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.btn-completed:hover {
+  background-color: #F07B3F;
+}
+
+.btn {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  border: none;
+  color: #fff;
+}
+
+.modal-content {
+  border-radius: 20px; /* Adjust modal shape here */
+
+}
+
+.modal-header {
+  border-bottom: none;
+  justify-content: center;
+}
+
+.modal-header img {
+  height: 40px;
+  border-radius: 10px; /* Adjust image shape here */
+}
+
+.modal-body {
+  text-align: center;
+  padding: 20px; /* Adjust padding */
+  margin-bottom: 20px; /* Adjust margin */
+}
+
+.modal-body h5 {
+  margin-bottom: 15px;
+  color: #2D4059;
+}
+
+.modal-body p {
+  color: #393E46;
+}
+
+.modal-footer {
+  border-top: none;
+  display: flex;
+  flex-direction: column; /* Align buttons vertically */
+  align-items: center;
+  gap: 10px; /* Space between buttons */
+}
+
+.modal-footer .btn {
+  width: 200px; /* Ensure buttons have the same width */
+  max-width: 200px; /* Adjust the max-width if needed */
+  display: inline-block; /* Ensure buttons have the same display style */
+}
+.modal-dialog {
+  max-width: 400px; /* Adjust the width as needed */
+  margin: 1.75rem auto;
 }

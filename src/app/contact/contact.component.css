@@ -1,0 +1,88 @@
+/* contact.component.css */
+.contact-container {
+  padding: 20px;
+  text-align: center;
+  background-color: #F0F0F0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-hero {
+  background-color: #FFFFFF;
+  padding: 50px 20px;
+  border-radius: 10px;
+  margin-bottom: 60px; /* Increased margin for more space between sections */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-hero h1 {
+  color: #2D4059;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.contact-hero p {
+  color: #393E46;
+  font-size: 1.5em;
+}
+
+.contact-info, .contact-form {
+  margin-bottom: 60px; /* Increased margin for more space between sections */
+  background-color: #FFFFFF;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2, .contact-form h2 {
+  color: #2D4059;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  color: #393E46;
+  font-size: 1.2em;
+  margin: 0 auto; /* Center the text block */
+  max-width: 800px; /* Limit the width for better readability */
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  color: #2D4059;
+  margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+.btn-primary {
+  background-color: #EA5455;
+  border-color: #EA5455;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #FFD460;
+  border-color: #FFD460;
+  color: #2D4059;
+}

@@ -18,6 +18,8 @@ import { MapComponent } from './map/map.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { FileUrlPipe } from './file-url.pipe';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { FileUrlPipe } from './file-url.pipe';
     MapComponent,
     HowItWorksComponent,
     FileUrlPipe,
+    AboutComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

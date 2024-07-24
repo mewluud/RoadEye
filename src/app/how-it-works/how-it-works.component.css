@@ -6,7 +6,7 @@
 }
 
 .how-it-works h2 {
-  font-size: 36px;
+  font-size: 4vw; /* Responsive font size */
   color: #2D4059;
   margin-bottom: 30px;
 }
@@ -27,7 +27,7 @@
   flex: 0 0 33.3333%; /* Show 3 cards at a time */
   max-width: 33.3333%;
   margin: 0 10px;
-  padding: 20px;
+  padding: 5%; /* Use percentage for padding */
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -41,8 +41,8 @@
 }
 
 .icon-container {
-  width: 60px;
-  height: 60px;
+  width: 10vw; /* Responsive size */
+  height: 10vw; /* Responsive size */
   margin: 0 auto 20px;
   display: flex;
   justify-content: center;
@@ -58,13 +58,13 @@
 }
 
 .card h3 {
-  font-size: 22px;
+  font-size: 2.5vw; /* Responsive font size */
   color: #2D4059;
   margin-bottom: 10px;
 }
 
 .card p {
-  font-size: 16px;
+  font-size: 2vw; /* Responsive font size */
   color: #393E46;
 }
 
@@ -78,7 +78,7 @@
   background-color: #2D4059;
   border: none;
   color: #fff;
-  font-size: 24px;
+  font-size: 2vw; /* Responsive font size */
   padding: 10px 20px;
   margin: 0 10px;
   border-radius: 5px;
@@ -92,7 +92,7 @@
 
 @media (max-width: 768px) {
   .how-it-works h2 {
-    font-size: 28px;
+    font-size: 6vw; /* Larger font size for smaller screens */
   }
 
   .card {
@@ -102,20 +102,20 @@
   }
 
   .icon-container {
-    width: 50px;
-    height: 50px;
+    width: 15vw; /* Adjust size for smaller screens */
+    height: 15vw; /* Adjust size for smaller screens */
   }
 
   .card h3 {
-    font-size: 20px;
+    font-size: 4vw; /* Adjust font size for smaller screens */
   }
 
   .card p {
-    font-size: 14px;
+    font-size: 3vw; /* Adjust font size for smaller screens */
   }
 
   .carousel-control {
-    font-size: 18px;
+    font-size: 4vw; /* Adjust font size for smaller screens */
     padding: 8px 16px;
   }
 }
@@ -124,4 +124,18 @@
   .card {
     height: 30vh; /* Adjust height for very small screens */
   }
+
+  .icon-container {
+    width: 20vw; /* Adjust size for very small screens */
+    height: 20vw; /* Adjust size for very small screens */
+  }
+
+  .card h3 {
+    font-size: 5vw; /* Adjust font size for very small screens */
+  }
+
+  .card p {
+    font-size: 4vw; /* Adjust font size for very small screens */
+  }
 }
+

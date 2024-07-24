@@ -1,18 +1,27 @@
 /* Hero Section */
+/* Hero Section */
 .hero {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* Centering horizontally */
+  align-items: center; /* Centering vertically */
   padding: 60px 0;
   background-color: #F7F7F7;
   border-radius: 10px;
-  flex-wrap: wrap;
+  height: 100vh; /* Full viewport height to center content vertically */
+  text-align: center; /* Center text in the section */
+}
+
+.hero-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-content {
   max-width: 600px;
-  flex: 1;
   padding: 20px;
+  text-align: center; /* Center text */
 }
 
 .hero h1 {
@@ -27,7 +36,6 @@
   margin-bottom: 30px;
 }
 
-
 .hero .btn-primary {
   background-color: #EA5455;
   border-color: #EA5455;
@@ -39,6 +47,7 @@
   border-color: #FFD460;
   color: #2D4059;
 }
+
 .hero-image {
   flex: 1;
   padding: 20px;
@@ -72,7 +81,6 @@
 
 /* how-it-works */
 
-
 /* Features Section */
 .features {
   padding: 50px 0;
@@ -93,7 +101,6 @@
   max-width: 100px;
   margin-bottom: 20px;
 }
-
 
 .step {
   text-align: center;
@@ -126,11 +133,12 @@
   max-width: 100px;
   margin-bottom: 20px;
 }
+
 /* Section Divider */
-.section-divider {
+/*.section-divider {
   border: none;
   height: 50px;
   background-color: #FFD460;
-  border-color:#FFD460;/* Yellow */
-  margin: 100px 0; /* Adjust spacing as needed */
-}
+  border-color:#FFD460;!* Yellow *!
+  margin: 100px 0; !* Adjust spacing as needed *!
+}*/

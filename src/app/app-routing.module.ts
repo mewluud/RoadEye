@@ -8,6 +8,8 @@ import {ThirdPartiesComponent} from "./third-parties/third-parties.component";
 import {PicturesComponent} from "./pictures/pictures.component";
 import {MapComponent} from "./map/map.component";
 import {HomeComponent} from "./home/home.component";
+import {AboutComponent} from "./about/about.component";
+import {ContactComponent} from "./contact/contact.component";
 
 const routes: Routes = [
   { path: 'report', component: ReportAnIssueComponent },
@@ -18,6 +20,9 @@ const routes: Routes = [
   { path: 'Pictures', component: PicturesComponent },
   { path: 'map', component: MapComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent  },
+  { path: 'contact', component: ContactComponent  },
+
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 

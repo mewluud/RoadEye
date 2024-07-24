@@ -10,11 +10,11 @@ export class HowItWorksComponent {
   @ViewChild('carouselInner', { static: true }) carouselInner!: ElementRef;
 
   steps = [
-    { icon: 'assets/icon1.svg', title: 'Step 1', description: 'Describe step 1 here.' },
-    { icon: 'assets/icon2.svg', title: 'Step 2', description: 'Describe step 2 here.' },
-    { icon: 'assets/icon3.svg', title: 'Step 3', description: 'Describe step 3 here.' },
-    { icon: 'assets/icon4.svg', title: 'Step 4', description: 'Describe step 4 here.' },
-    { icon: 'assets/img/Asset-3how-it-works.svg', title: 'Step 5', description: 'Describe step 5 here.' }
+    { icon: 'assets/icon1.svg', title: 'Step 1', description: 'Install the app' },
+    { icon: 'assets/icon2.svg', title: 'Step 2', description: 'Drive safe.' },
+    { icon: 'assets/icon3.svg', title: 'Step 3', description: 'Encounter Any Issue !' },
+    { icon: 'assets/icon4.svg', title: 'Step 4', description: 'Open the App.' },
+    { icon: 'assets/icon5.svg', title: 'Step 5', description: 'Start reporting' }
   ];
 
   scrollCarousel(direction: number) {

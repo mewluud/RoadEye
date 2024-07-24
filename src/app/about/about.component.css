@@ -1,0 +1,129 @@
+/* about.component.css */
+.about-container {
+  padding: 20px;
+  text-align: center;
+  background-color: #F0F0F0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-hero {
+  background-color: #FFFFFF;
+  padding: 50px 20px;
+  border-radius: 10px;
+  margin-bottom: 60px; /* Increased margin for more space between sections */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-hero h1 {
+  color: #2D4059;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.about-hero p {
+  color: #393E46;
+  font-size: 1.5em;
+}
+
+.about-mission, .about-vision, .about-team, .about-company, .about-ceo {
+  margin-bottom: 60px; /* Increased margin for more space between sections */
+  background-color: #FFFFFF;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-mission h2, .about-vision h2, .about-team h2, .about-company h2, .about-ceo h2 {
+  color: #2D4059;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.about-mission p, .about-vision p, .about-company p, .about-ceo p {
+  color: #393E46;
+  font-size: 1.2em;
+  margin: 0 auto; /* Center the text block */
+  max-width: 800px; /* Limit the width for better readability */
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.team-card {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  flex: 1 1 calc(33.333% - 40px); /* Responsive width with margin consideration */
+  max-width: 300px; /* Limit the max width */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-card h3 {
+  color: #2D4059;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.team-card p {
+  color: #393E46;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2.5em;
+  }
+
+  .about-hero p {
+    font-size: 1.2em;
+  }
+
+  .about-mission h2, .about-vision h2, .about-team h2, .about-company h2, .about-ceo h2 {
+    font-size: 2em;
+  }
+
+  .about-mission p, .about-vision p, .about-company p, .about-ceo p {
+    font-size: 1em;
+  }
+
+  .team-card {
+    flex: 1 1 calc(50% - 40px); /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero h1 {
+    font-size: 2em;
+  }
+
+  .about-hero p {
+    font-size: 1em;
+  }
+
+  .about-mission h2, .about-vision h2, .about-team h2, .about-company h2, .about-ceo h2 {
+    font-size: 1.5em;
+  }
+
+  .about-mission p, .about-vision p, .about-company p, .about-ceo p {
+    font-size: 0.9em;
+  }
+
+  .team-card {
+    flex: 1 1 100%; /* Full width for very small screens */
+  }
+}
